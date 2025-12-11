@@ -27,14 +27,14 @@
      <item>
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="2">
-        <widget class="QSlider" name="sliderG">
+        <widget class="QSlider" name="sliderD">
          <property name="orientation">
           <enum>Qt::Orientation::Vertical</enum>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QSpinBox" name="spinBox_4">
+        <widget class="QSpinBox" name="spinBoxG">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -53,7 +53,7 @@
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QSpinBox" name="spinBox_3">
+        <widget class="QSpinBox" name="spinBoxD">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -72,7 +72,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QSpinBox" name="spinBox_2">
+        <widget class="QSpinBox" name="spinBoxC">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -91,7 +91,7 @@
         </widget>
        </item>
        <item row="4" column="0" colspan="3">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="labelcolor">
          <property name="font">
           <font>
            <family>Arial</family>
@@ -124,7 +124,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QSlider" name="sliderD">
+        <widget class="QSlider" name="sliderG">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -170,5 +170,102 @@ sliderD-&gt;setStyleSheet(&quot;QSlider::handle:vertical {background: qlineargra
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>sliderD</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxD</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxD</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sliderD</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderG</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxG</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxG</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sliderG</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>82</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxC</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sliderC</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderC</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxC</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
