@@ -34,7 +34,7 @@ public:
     QSpinBox *spinBoxG;
     QSpinBox *spinBoxD;
     QSpinBox *spinBoxC;
-    QLabel *label;
+    QLabel *labelcolor;
     QSlider *sliderC;
     QSlider *sliderG;
     QMenuBar *menubar;
@@ -44,12 +44,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(294, 366);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(70, 70, 271, 321));
+        horizontalLayoutWidget->setGeometry(QRect(10, 0, 271, 321));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -57,6 +57,7 @@ public:
         gridLayout->setObjectName("gridLayout");
         sliderD = new QSlider(horizontalLayoutWidget);
         sliderD->setObjectName("sliderD");
+        sliderD->setMaximum(255);
         sliderD->setOrientation(Qt::Orientation::Vertical);
 
         gridLayout->addWidget(sliderD, 1, 2, 1, 1);
@@ -94,16 +95,16 @@ public:
 
         gridLayout->addWidget(spinBoxC, 3, 1, 1, 1);
 
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName("label");
+        labelcolor = new QLabel(horizontalLayoutWidget);
+        labelcolor->setObjectName("labelcolor");
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Arial")});
         font1.setPointSize(18);
         font1.setBold(true);
-        label->setFont(font1);
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        labelcolor->setFont(font1);
+        labelcolor->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout->addWidget(label, 4, 0, 1, 3);
+        gridLayout->addWidget(labelcolor, 4, 0, 1, 3);
 
         sliderC = new QSlider(horizontalLayoutWidget);
         sliderC->setObjectName("sliderC");
@@ -137,7 +138,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 294, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -157,7 +158,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelcolor->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

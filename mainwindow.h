@@ -25,6 +25,10 @@ private slots:
 
     void on_sliderC_actionTriggered(int value);
 
+    void RGBAdjust() {
+
+    }
+
     void RedAdjust(int value) {
         RGBAdjust();
     }
@@ -41,14 +45,5 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    void RGBAdjust()
-    {
-        QColor color(ui.slideG->value(), ui.slideC->value(), ui.slideD->value());
-        QPalette palette;
-        ui->labelcolor->setAutoFillBackground(true);
-        palette.setColor(QPalette::Window, color);
-        ui->labelcolor->setPalette(palette);
-        ui->labelcolor->setText("#" + color.name().toUpper());
-    }
 };
 #endif // MAINWINDOW_H
